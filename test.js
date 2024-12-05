@@ -1,6 +1,6 @@
 function findChampions(players) {
   const sort = players.sort((a, b) => a.age - b.age || b.elo - a.elo);
-  console.log(sort);
+  //console.log(sort);
   const champions = [];
   let maxElo = 0;
 
