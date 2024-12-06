@@ -1,26 +1,4 @@
-function findChampions(players) {
-  const sort = players.sort((a, b) => a.age - b.age || b.elo - a.elo);
-  //console.log(sort);
-  const champions = [];
-  let maxElo = 0;
-
-  for (const player of players) {
-    if (player.elo > maxElo) {
-      champions.push(player);
-      maxElo = player.elo;
-    } else if (
-      champions.length > 0 &&
-      champions[champions.length - 1].age === player.age &&
-      champions[champions.length - 1].elo === player.elo
-    ) {
-      champions.push(player);
-    }
-  }
-
-  return champions;
-}
-
-const players = [
+export const testCases = [
   { name: "Player1", age: 50, elo: 2800 },
   { name: "Player2", age: 30, elo: 2600 },
   { name: "Player3", age: 18, elo: 260 },
@@ -42,4 +20,3 @@ const players = [
   { name: "Player19", age: 25, elo: 2600 },
   { name: "Player20", age: 30, elo: 2500 },
 ];
-console.log(findChampions(players));
